@@ -68,7 +68,7 @@ public class HomeController {
 	// return "home";
 	// }
 
-	@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, value = "/", method = RequestMethod.GET)
+	@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, value = "/input", method = RequestMethod.GET)
 	public @ResponseBody
 	List<UserInput> getUserInput(Locale locale, Model model) {
 		logger.info("/addresses GET request");
@@ -77,7 +77,7 @@ public class HomeController {
 		return userInputs;
 	}
 
-	@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, value = "/", method = RequestMethod.POST)
+	@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, value = "/input", method = RequestMethod.POST)
 	public @ResponseBody
 	List<UserInput> postUserInput(@RequestBody List<UserInput> userInputs,
 			Locale locale, Model model) {
