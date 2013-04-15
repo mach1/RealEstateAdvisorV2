@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import com.mach1.reafs.estates.EstateProperty;
 import com.mach1.reafs.estates.EstatePropertyFactory;
 import com.mach1.reafs.input.UserInput;
+import com.mach1.reafs.input.UserOutputs;
 import com.mach1.reafs.output.UserOutput;
 
 @Component("realEstateProcessingService")
@@ -19,9 +20,12 @@ public class RealEstateProcessingService {
 	private StatefulKnowledgeSession realEstatesKSession;
 
 	public List<EstateProperty> getEstates(List<UserInput> userInputs) {
+
 		System.out.println("Processing with user inputs:");
 		System.out.println(userInputs);
-		List<UserOutput> userOutputs = getDroolsOutput(userInputs);
+		List<UserOutput> userOutputsList = getDroolsOutput(userInputs);
+		UserOutputs userOutputs = new UserOutputs(userOutputsList);
+
 		System.out.println("Got user outputs:");
 		System.out.println(userOutputs);
 		List<EstateProperty> allEstateProperties = EstatePropertyFactory
@@ -44,8 +48,7 @@ public class RealEstateProcessingService {
 	}
 
 	private List<EstateProperty> getFilteredEstates(
-			List<EstateProperty> allEstateProperties,
-			List<UserOutput> userOutputs) {
+			List<EstateProperty> allEstateProperties, UserOutputs userOutputs) {
 		List<EstateProperty> filteredEstates = new ArrayList<EstateProperty>();
 		for (EstateProperty estateProperty : allEstateProperties) {
 			if (isEstateSuitable(estateProperty, userOutputs)) {
@@ -56,9 +59,10 @@ public class RealEstateProcessingService {
 	}
 
 	private boolean isEstateSuitable(EstateProperty estateProperty,
-			List<UserOutput> userOutputs) {
+			UserOutputs userOutputs) {
 		for (UserOutput userOutput : estateProperty.getAllProperties()) {
-			if (!userOutputs.contains(userOutput)) {
+			if (!userOutputs.containsEnumValue(userOutput)
+					&& userOutputs.containsOutputClass(userOutput.getClass())) {
 				return false;
 			}
 		}

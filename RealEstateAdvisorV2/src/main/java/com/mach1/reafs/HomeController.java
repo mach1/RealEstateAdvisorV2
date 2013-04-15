@@ -21,6 +21,7 @@ import com.mach1.reafs.input.UserInput;
 import com.mach1.reafs.input.types.CarAvailability;
 import com.mach1.reafs.input.types.DistanceFromTheNeighbors;
 import com.mach1.reafs.service.RealEstateProcessingService;
+import com.mach1.reafs.service.UserInputEnumProcessor;
 
 /**
  * Handles requests for the application home page.
@@ -37,58 +38,20 @@ public class HomeController {
 	@Autowired
 	private RealEstateProcessingService realEstateProcessingService;
 
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
-	// @RequestMapping(value = "/", method = RequestMethod.GET)
-	// public String home(Locale locale, Model model) {
-	// logger.info("Welcome home! The client locale is {}.", locale);
-	//
-	// Date date = new Date();
-	// DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG,
-	// DateFormat.LONG, locale);
-	//
-	// String formattedDate = dateFormat.format(date);
-	//
-	// model.addAttribute("serverTime", formattedDate );
-	//
-	// List<UserInput> userInputs = new ArrayList<UserInput>();
-	// userInputs.add(DistanceFromTheNeighbors.SAME_BUILDING);
-	// userInputs.add(DistanceFromTheSea.VISIBLE_FROM_WINDOW);
-	// for (UserInput userInput : userInputs) {
-	// realEstatesKSession.insert(userInput);
-	// }
-	//
-	// List<UserOutput> userOutputs = new ArrayList<UserOutput>();
-	// realEstatesKSession.insert(userOutputs);
-	// realEstatesKSession.fireAllRules();
-	//
-	// System.out.println(userOutputs);
-	//
-	// return "home";
-	// }
-
-	@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, value = "/input", method = RequestMethod.GET)
-	public @ResponseBody
-	List<UserInput> getUserInput(Locale locale, Model model) {
-		logger.info("/addresses GET request");
-		List<UserInput> userInputs = new ArrayList<UserInput>();
-		userInputs.add(DistanceFromTheNeighbors.FEW_HUNDRED_METERS);
-		return userInputs;
-	}
-
 	@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, value = "/input", method = RequestMethod.POST)
 	public @ResponseBody
-	List<UserInput> postUserInput(@RequestBody List<UserInput> userInputs,
-			Locale locale, Model model) {
-		
-		List<Class> enumClasses = new ArrayList<Class>();
-		enumClasses.add(CarAvailability.class);
-		CarAvailability.values();
-//		List<EstateProperty> estateProperties = realEstateProcessingService
-//				.getEstates(userInputs);
-		
-		return userInputs;
+	List<EstateProperty> postUserInput(
+			@RequestBody List<String> userInputStrings, Locale locale,
+			Model model) {
+
+		UserInputEnumProcessor userInputEnumProcessor = UserInputEnumProcessor
+				.getInstance();
+		List<UserInput> userInputs = userInputEnumProcessor
+				.processStrings(userInputStrings);
+
+		List<EstateProperty> filteredRealEstates = realEstateProcessingService
+				.getEstates(userInputs);
+		return filteredRealEstates;
 	}
 
 }

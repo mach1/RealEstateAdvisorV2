@@ -1,6 +1,5 @@
 package com.mach1.reafs.input.types;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.mach1.reafs.input.UserInput;
 
 public enum DistanceFromTheNeighbors implements UserInput {
