@@ -1,6 +1,5 @@
 package com.mach1.reafs;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -18,8 +17,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mach1.reafs.estates.EstateProperty;
 import com.mach1.reafs.input.UserInput;
-import com.mach1.reafs.input.types.CarAvailability;
-import com.mach1.reafs.input.types.DistanceFromTheNeighbors;
+import com.mach1.reafs.input.UserInputQuestion;
+import com.mach1.reafs.input.UserInputQuestionFactory;
 import com.mach1.reafs.service.RealEstateProcessingService;
 import com.mach1.reafs.service.UserInputEnumProcessor;
 
@@ -52,6 +51,13 @@ public class HomeController {
 		List<EstateProperty> filteredRealEstates = realEstateProcessingService
 				.getEstates(userInputs);
 		return filteredRealEstates;
+	}
+	
+	@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, value = "/questions", method = RequestMethod.GET)
+	public @ResponseBody
+	List<UserInputQuestion> getUserInputQuestion(Locale locale,
+			Model model) {
+		return UserInputQuestionFactory.getInstance().getUserInputQuestions();
 	}
 
 }
