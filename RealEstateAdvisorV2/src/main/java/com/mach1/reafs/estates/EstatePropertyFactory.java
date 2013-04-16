@@ -26,9 +26,9 @@ public class EstatePropertyFactory {
 		estateProperties.add(new EstateProperty(RealEstateType.TERRACED,
 				PlotSize.LESS_THAN_500, RealEstateLocation.KRISTIINE));
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
-				PlotSize.FROM_500_TO_1500, RealEstateLocation.LASNAMÄE));
+				PlotSize.FROM_500_TO_1500, RealEstateLocation.LASNAMAE));
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
-				PlotSize.MORE_THAN_1500, RealEstateLocation.MUSTAMÄE));
+				PlotSize.MORE_THAN_1500, RealEstateLocation.MUSTAMAE));
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				PlotSize.LESS_THAN_500, RealEstateLocation.PIRITA));
 		return estateProperties;

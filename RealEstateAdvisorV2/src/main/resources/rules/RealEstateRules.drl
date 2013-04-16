@@ -114,20 +114,20 @@ rule "RE-13: When sea should be a walk away then suggest Kristiine as location"
 		outputList.add(RealEstateLocation.KRISTIINE);
 end
 
-rule "RE-14: When sea distance is not important then suggest Lasnamäe as location"
+rule "RE-14: When sea distance is not important then suggest LASNAMAE as location"
 	when
 		DistanceFromTheSea( this == DistanceFromTheSea.NOT_IMPORTANT )
 		outputList : List()
 	then
-		outputList.add(RealEstateLocation.LASNAMÄE);
+		outputList.add(RealEstateLocation.LASNAMAE);
 end
 
-rule "RE-15: When sea distance is not important then suggest Mustamäe as location"
+rule "RE-15: When sea distance is not important then suggest MUSTAMAE as location"
 	when
 		DistanceFromTheSea( this == DistanceFromTheSea.NOT_IMPORTANT )
 		outputList : List()
 	then
-		outputList.add(RealEstateLocation.MUSTAMÄE);
+		outputList.add(RealEstateLocation.MUSTAMAE);
 end
 
 #Family size rules
@@ -825,12 +825,12 @@ rule "RE-101: When school travel time is less than 15 minutes then suggest real 
 		outputList.add(RealEstateLocation.KRISTIINE);
 end
 
-rule "RE-102: When school travel time is less than 15 minutes then suggest real estate location Mustamäe"
+rule "RE-102: When school travel time is less than 15 minutes then suggest real estate location MUSTAMAE"
 	when 
 		SchoolTravelTime( this == SchoolTravelTime.MAX_OF_15_MIN)
 		outputList : List()
 	then
-		outputList.add(RealEstateLocation.MUSTAMÄE);
+		outputList.add(RealEstateLocation.MUSTAMAE);
 end
 
 rule "RE-103: When school travel time is less than 15 minutes then suggest real estate location Pirita"
@@ -857,20 +857,20 @@ rule "RE-105: When school travel time is 15 to 45 minutes then suggest real esta
 		outputList.add(RealEstateLocation.KRISTIINE);
 end
 
-rule "RE-106: When school travel time is 15 to 45 minutes then suggest real estate location Mustamäe"
+rule "RE-106: When school travel time is 15 to 45 minutes then suggest real estate location MUSTAMAE"
 	when 
 		SchoolTravelTime( this == SchoolTravelTime.FROM_15_TO_45_MIN)
 		outputList : List()
 	then
-		outputList.add(RealEstateLocation.MUSTAMÄE);
+		outputList.add(RealEstateLocation.MUSTAMAE);
 end
 
-rule "RE-107: When school travel time is 15 to 45 minutes then suggest real estate location Lasnamäe"
+rule "RE-107: When school travel time is 15 to 45 minutes then suggest real estate location LASNAMAE"
 	when 
 		SchoolTravelTime( this == SchoolTravelTime.FROM_15_TO_45_MIN)
 		outputList : List()
 	then
-		outputList.add(RealEstateLocation.LASNAMÄE);
+		outputList.add(RealEstateLocation.LASNAMAE);
 end
 
 rule "RE-108: When school travel time is 15 to 45 minutes then suggest real estate location Pirita"
@@ -881,12 +881,12 @@ rule "RE-108: When school travel time is 15 to 45 minutes then suggest real esta
 		outputList.add(RealEstateLocation.PIRITA);
 end
 
-rule "RE-109: When school travel time is more than 45 minutes then suggest real estate location Lasnamäe"
+rule "RE-109: When school travel time is more than 45 minutes then suggest real estate location LASNAMAE"
 	when 
 		SchoolTravelTime( this == SchoolTravelTime.MORE_THAN_45_MIN)
 		outputList : List()
 	then
-		outputList.add(RealEstateLocation.LASNAMÄE);
+		outputList.add(RealEstateLocation.LASNAMAE);
 end
 
 rule "RE-110: When school travel time is more than 45 minutes then suggest real estate location Pirita"
@@ -914,12 +914,12 @@ rule "RE-112: When current school is TTU then suggest real estate location Krist
 		outputList.add(RealEstateLocation.KRISTIINE);
 end
 
-rule "RE-113: When current school is TTU then suggest real estate location Mustamäe"
+rule "RE-113: When current school is TTU then suggest real estate location MUSTAMAE"
 	when 
 		CurrentSchool( this == CurrentSchool.TALLINN_UNIVERSITY_OF_TECHNOLOGY)
 		outputList : List()
 	then
-		outputList.add(RealEstateLocation.MUSTAMÄE);
+		outputList.add(RealEstateLocation.MUSTAMAE);
 end
 
 rule "RE-114: When current school is TLU then suggest real estate location kesklinn"
@@ -938,12 +938,12 @@ rule "RE-115: When current school is TLU then suggest real estate location Krist
 		outputList.add(RealEstateLocation.KRISTIINE);
 end
 
-rule "RE-116: When current school is TLU then suggest real estate location Lasnamäe"
+rule "RE-116: When current school is TLU then suggest real estate location LASNAMAE"
 	when 
 		CurrentSchool( this == CurrentSchool.TALLINN_UNIVERSITY)
 		outputList : List()
 	then
-		outputList.add(RealEstateLocation.LASNAMÄE);
+		outputList.add(RealEstateLocation.LASNAMAE);
 end
 
 rule "RE-117: When current school is TLU then suggest real estate location Pirita"
@@ -1189,20 +1189,20 @@ rule "RE-146: When 1 car in family then suggest location kesklinn"
 		outputList.add(RealEstateLocation.KESKLINN);
 end
 
-rule "RE-147: When 1 car in family then suggest location Mustamäe"
+rule "RE-147: When 1 car in family then suggest location MUSTAMAE"
 	when 
 		CarAvailability( this == CarAvailability.ONE_CAR_IN_FAMILY)
 		outputList : List()
 	then
-		outputList.add(RealEstateLocation.MUSTAMÄE);
+		outputList.add(RealEstateLocation.MUSTAMAE);
 end
 
-rule "RE-148: When 1 car in family then suggest location Lasnamäe"
+rule "RE-148: When 1 car in family then suggest location LASNAMAE"
 	when 
 		CarAvailability( this == CarAvailability.ONE_CAR_IN_FAMILY)
 		outputList : List()
 	then
-		outputList.add(RealEstateLocation.LASNAMÄE);
+		outputList.add(RealEstateLocation.LASNAMAE);
 end
 
 rule "RE-149: When 1 car in family then suggest location Pirita"
@@ -1213,12 +1213,12 @@ rule "RE-149: When 1 car in family then suggest location Pirita"
 		outputList.add(RealEstateLocation.PIRITA);
 end
 
-rule "RE-150: When more than 1 car in family then suggest location Lasnamäe"
+rule "RE-150: When more than 1 car in family then suggest location LASNAMAE"
 	when 
 		CarAvailability( this == CarAvailability.MORE_THAN_ONE_CAR_IN_FAMILY)
 		outputList : List()
 	then
-		outputList.add(RealEstateLocation.LASNAMÄE);
+		outputList.add(RealEstateLocation.LASNAMAE);
 end
 
 rule "RE-151: When more than 1 car in family then suggest location Pirita"
@@ -1245,12 +1245,12 @@ rule "RE-153: When no car in family then suggest location Kristiine"
 		outputList.add(RealEstateLocation.KRISTIINE);
 end
 
-rule "RE-154: When no car in family then suggest location Mustamäe"
+rule "RE-154: When no car in family then suggest location MUSTAMAE"
 	when 
 		CarAvailability( this == CarAvailability.NO_CAR)
 		outputList : List()
 	then
-		outputList.add(RealEstateLocation.MUSTAMÄE);
+		outputList.add(RealEstateLocation.MUSTAMAE);
 end
 
 rule "RE-155: When one car in family then suggest type terraced"

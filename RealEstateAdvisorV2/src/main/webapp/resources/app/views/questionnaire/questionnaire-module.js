@@ -8,7 +8,7 @@ define([
   var questionnaire = angular.module('questionnaire', ['ui.bootstrap']);
 
   // Add a controller to questionnaire module
-  questionnaire.controller('questionnaireController', ['$scope', '$location', 'questionService', function($scope, $location, questionService) {
+  questionnaire.controller('questionnaireController', ['$scope', '$location', '$http', 'questionService', function($scope, $location, $http, questionService) {
     if ($location.path() === '') {
       $location.path('0');
     }
@@ -43,6 +43,12 @@ define([
 
     $scope.isLastQuestion = function() {
       return ($scope.getStepId() + 1) === questionService.getQuestionCount();
+    };
+    
+    $scope.submit = function() {
+    	$http.post('../rest/input', ["FEW_HUNDRED_METERS"]).then(function(data) {
+    		console.log(data.data);
+    	});
     };
 
     $scope.currentQuestion = questionService.getQuestions()[$scope.getStepId()];
