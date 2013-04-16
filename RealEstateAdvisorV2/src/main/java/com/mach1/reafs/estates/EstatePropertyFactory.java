@@ -83,183 +83,123 @@ public class EstatePropertyFactory {
 		//V-14
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.RENT, RealEstateLocation.LASNAMAE,
-				Price.FROM_200_TO_500, PlotSize.LESS_THAN_500,
-				NumberOfRooms.THREE, TotalArea.FROM_50_TO_100, 
-				NumberOfFloors.ONE, Condition.IN_NEED_OF_REPAIR));
+				230, 0,3, 64.50, 1, Condition.IN_NEED_OF_REPAIR));
 		//V-15
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.RENT, RealEstateLocation.LASNAMAE,
-				Price.FROM_200_TO_500, PlotSize.LESS_THAN_500,
-				NumberOfRooms.TWO, TotalArea.FROM_50_TO_100, 
-				NumberOfFloors.ONE, Condition.IN_NEED_OF_REPAIR));
+				250, 0,2, 65, 1, Condition.IN_NEED_OF_REPAIR));
 		//V-16
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.SALE, RealEstateLocation.KESKLINN,
-				Price.FROM_1200_TO_50000, PlotSize.LESS_THAN_500,
-				NumberOfRooms.ONE, TotalArea.LESS_THAN_50, 
-				NumberOfFloors.ONE, Condition.RENOVATED));
+				24000, 0,1, 16, 1, Condition.RENOVATED));
 		//V-17
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.SALE, RealEstateLocation.KESKLINN,
-				Price.FROM_50000_TO_250000, PlotSize.LESS_THAN_500,
-				NumberOfRooms.THREE, TotalArea.FROM_50_TO_100, 
-				NumberOfFloors.ONE, Condition.IN_NEED_OF_REPAIR));
+				90000, 0,3, 73.80, 1, Condition.IN_NEED_OF_REPAIR));
 		//V-18
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.SALE, RealEstateLocation.KESKLINN,
-				Price.FROM_50000_TO_250000, PlotSize.LESS_THAN_500,
-				NumberOfRooms.THREE, TotalArea.FROM_50_TO_100, 
-				NumberOfFloors.ONE, Condition.NEW));
+				84000, 0,3, 51.10, 1, Condition.NEW));
 		//V-19
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.SALE, RealEstateLocation.KRISTIINE,
-				Price.FROM_50000_TO_250000, PlotSize.LESS_THAN_500,
-				NumberOfRooms.FOUR, TotalArea.FROM_100_TO_250, 
-				NumberOfFloors.ONE, Condition.RENOVATED));
+				149000, 0,4, 125, 1, Condition.RENOVATED));
 		//V-20
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.SALE, RealEstateLocation.KRISTIINE,
-				Price.FROM_50000_TO_250000, PlotSize.LESS_THAN_500,
-				NumberOfRooms.TWO, TotalArea.LESS_THAN_50, 
-				NumberOfFloors.ONE, Condition.NEW));
+				88000, 0,2, 49, 1, Condition.NEW));
 		//V-21
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.SALE, RealEstateLocation.LASNAMAE,
-				Price.FROM_50000_TO_250000, PlotSize.LESS_THAN_500,
-				NumberOfRooms.ONE, TotalArea.LESS_THAN_50, 
-				NumberOfFloors.ONE, Condition.RENOVATED));
+				51000, 0,1, 32, 1, Condition.RENOVATED));
 		//V-22
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.SALE, RealEstateLocation.LASNAMAE,
-				Price.FROM_1200_TO_50000, PlotSize.LESS_THAN_500,
-				NumberOfRooms.TWO, TotalArea.LESS_THAN_50, 
-				NumberOfFloors.ONE, Condition.IN_NEED_OF_REPAIR));
+				38000, 0,2, 31.40,1, Condition.IN_NEED_OF_REPAIR));
 		//V-23
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.SALE, RealEstateLocation.KESKLINN,
-				Price.MORE_THAN_250000, PlotSize.FROM_500_TO_1500,
-				NumberOfRooms.MORE_THAN_FOUR, TotalArea.MORE_THAN_250, 
-				NumberOfFloors.MORE_THAN_THREE, Condition.NEW));
+				380000, 600,8, 350, 4, Condition.NEW));
 		//V-24
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.SALE, RealEstateLocation.PIRITA,
-				Price.FROM_50000_TO_250000, PlotSize.FROM_500_TO_1500,
-				NumberOfRooms.THREE, TotalArea.FROM_100_TO_250, 
-				NumberOfFloors.TWO, Condition.NEW));
+				217000, 600,3, 124.70, 2, Condition.NEW));
 		//V-25
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.SALE, RealEstateLocation.MUSTAMAE,
-				Price.MORE_THAN_250000, PlotSize.FROM_500_TO_1500,
-				NumberOfRooms.MORE_THAN_FOUR, TotalArea.MORE_THAN_250, 
-				NumberOfFloors.TWO, Condition.NEW));
+				320000, 664,6, 300, 2, Condition.NEW));
 		//V-26
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.SALE, RealEstateLocation.KRISTIINE,
-				Price.MORE_THAN_250000, PlotSize.FROM_500_TO_1500,
-				NumberOfRooms.MORE_THAN_FOUR, TotalArea.FROM_100_TO_250, 
-				NumberOfFloors.TWO, Condition.NEW));
+				348000, 777,5, 210,1, Condition.NEW));
 		//V-27
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.SALE, RealEstateLocation.LASNAMAE,
-				Price.MORE_THAN_250000, PlotSize.MORE_THAN_1500,
-				NumberOfRooms.MORE_THAN_FOUR, TotalArea.MORE_THAN_250, 
-				NumberOfFloors.TWO, Condition.NEW));
+				350000, 1710,10, 315, 2, Condition.NEW));
 		//V-28
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.SALE, RealEstateLocation.KESKLINN,
-				Price.FROM_50000_TO_250000, PlotSize.LESS_THAN_500,
-				NumberOfRooms.THREE, TotalArea.FROM_50_TO_100, 
-				NumberOfFloors.TWO, Condition.RENOVATED));
+				120000, 100,3, 90, 2, Condition.RENOVATED));
 		//V-29
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.SALE, RealEstateLocation.PIRITA,
-				Price.FROM_50000_TO_250000, PlotSize.FROM_500_TO_1500,
-				NumberOfRooms.FOUR, TotalArea.FROM_100_TO_250, 
-				NumberOfFloors.TWO, Condition.RENOVATED));
+				146900, 938,4, 127, 2, Condition.RENOVATED));
 		//V-30
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.SALE, RealEstateLocation.KRISTIINE,
-				Price.FROM_50000_TO_250000, PlotSize.FROM_500_TO_1500,
-				NumberOfRooms.MORE_THAN_FOUR, TotalArea.FROM_100_TO_250, 
-				NumberOfFloors.THREE, Condition.RENOVATED));
+				225000, 900,5, 190, 3, Condition.RENOVATED));
 		//V-31
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.SALE, RealEstateLocation.LASNAMAE,
-				Price.FROM_50000_TO_250000, PlotSize.FROM_500_TO_1500,
-				NumberOfRooms.MORE_THAN_FOUR, TotalArea.FROM_100_TO_250, 
-				NumberOfFloors.TWO, Condition.RENOVATED));
+				150000, 759,6, 168, 2, Condition.RENOVATED));
 		//V-32
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.SALE, RealEstateLocation.KESKLINN,
-				Price.FROM_50000_TO_250000, PlotSize.LESS_THAN_500,
-				NumberOfRooms.THREE, TotalArea.FROM_50_TO_100, 
-				NumberOfFloors.ONE, Condition.IN_NEED_OF_REPAIR));
+				110000, 301,3, 93, 1, Condition.IN_NEED_OF_REPAIR));
 		//V-33
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.SALE, RealEstateLocation.PIRITA,
-				Price.FROM_50000_TO_250000, PlotSize.FROM_500_TO_1500,
-				NumberOfRooms.FOUR, TotalArea.FROM_100_TO_250, 
-				NumberOfFloors.TWO, Condition.IN_NEED_OF_REPAIR));
+				125000, 900,4, 112.9, 2, Condition.IN_NEED_OF_REPAIR));
 		//V-34
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.SALE, RealEstateLocation.MUSTAMAE,
-				Price.MORE_THAN_250000, PlotSize.MORE_THAN_1500,
-				NumberOfRooms.MORE_THAN_FOUR, TotalArea.FROM_100_TO_250, 
-				NumberOfFloors.TWO, Condition.IN_NEED_OF_REPAIR));
+				504900, 1650,5, 108, 2, Condition.IN_NEED_OF_REPAIR));
 		//V-35
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.SALE, RealEstateLocation.KRISTIINE,
-				Price.FROM_50000_TO_250000, PlotSize.MORE_THAN_1500,
-				NumberOfRooms.MORE_THAN_FOUR, TotalArea.FROM_100_TO_250, 
-				NumberOfFloors.TWO, Condition.IN_NEED_OF_REPAIR));
+				155000, 1500,6, 209.3, 2, Condition.IN_NEED_OF_REPAIR));
 		//V-36
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.SALE, RealEstateLocation.LASNAMAE,
-				Price.MORE_THAN_250000, PlotSize.MORE_THAN_1500,
-				NumberOfRooms.MORE_THAN_FOUR, TotalArea.MORE_THAN_250, 
-				NumberOfFloors.TWO, Condition.IN_NEED_OF_REPAIR));
+				375000, 3838,8, 293.50, 2, Condition.IN_NEED_OF_REPAIR));
 		//V-37
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.SALE, RealEstateLocation.KESKLINN,
-				Price.FROM_50000_TO_250000, PlotSize.MORE_THAN_1500,
-				NumberOfRooms.MORE_THAN_FOUR, TotalArea.FROM_100_TO_250, 
-				NumberOfFloors.TWO, Condition.IN_NEED_OF_REPAIR));
+				189000, 1857,5, 140, 2, Condition.IN_NEED_OF_REPAIR));
 		//V-38
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.SALE, RealEstateLocation.KRISTIINE,
-				Price.MORE_THAN_250000, PlotSize.MORE_THAN_1500,
-				NumberOfRooms.MORE_THAN_FOUR, TotalArea.FROM_100_TO_250, 
-				NumberOfFloors.TWO, Condition.RENOVATED));
+				280000, 2045,6, 120, 2, Condition.RENOVATED));
 		//V-39
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.SALE, RealEstateLocation.LASNAMAE,
-				Price.FROM_50000_TO_250000, PlotSize.FROM_500_TO_1500,
-				NumberOfRooms.FOUR, TotalArea.FROM_50_TO_100, 
-				NumberOfFloors.TWO, Condition.IN_NEED_OF_REPAIR));
+				159000, 1200,4, 90, 2, Condition.IN_NEED_OF_REPAIR));
 		//V-40
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.SALE, RealEstateLocation.MUSTAMAE,
-				Price.MORE_THAN_250000, PlotSize.FROM_500_TO_1500,
-				NumberOfRooms.MORE_THAN_FOUR, TotalArea.MORE_THAN_250, 
-				NumberOfFloors.TWO, Condition.NEW));
+				319000, 1003,6, 282, 2, Condition.NEW));
 		//V-41
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.RENT, RealEstateLocation.PIRITA,
-				Price.FROM_500_TO_1200, PlotSize.FROM_500_TO_1500,
-				NumberOfRooms.MORE_THAN_FOUR, TotalArea.FROM_100_TO_250, 
-				NumberOfFloors.TWO, Condition.RENOVATED));
+				850, 783,5, 158, 2, Condition.RENOVATED));
 		//V-42
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.RENT, RealEstateLocation.KESKLINN,
-				Price.FROM_1200_TO_50000, PlotSize.LESS_THAN_500,
-				NumberOfRooms.MORE_THAN_FOUR, TotalArea.MORE_THAN_250, 
-				NumberOfFloors.TWO, Condition.RENOVATED));
+				1500, 200,6, 260, 2, Condition.RENOVATED));
 		//V-43
 		estateProperties.add(new EstateProperty(RealEstateType.HOUSE,
 				TransactionType.RENT, RealEstateLocation.KRISTIINE,
-				Price.FROM_1200_TO_50000, PlotSize.MORE_THAN_1500,
-				NumberOfRooms.MORE_THAN_FOUR, TotalArea.MORE_THAN_250, 
-				NumberOfFloors.THREE, Condition.NEW));
+				3900, 1716,8, 500, 3, Condition.NEW));
 		
 		return estateProperties;
 	}
