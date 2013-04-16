@@ -8,6 +8,7 @@ import com.mach1.reafs.output.types.*;
 
 public class EstateProperty {
 
+	private String identificator;
 	private RealEstateType realEstateType;
 	private TransactionType transactionType;
 	private RealEstateLocation realEstateLocation;
@@ -30,7 +31,7 @@ public class EstateProperty {
 	public EstateProperty() {
 	}
 	
-	public EstateProperty(RealEstateType realEstateType, TransactionType transactionType,
+	public EstateProperty(String identificator, RealEstateType realEstateType, TransactionType transactionType,
 			RealEstateLocation realEstateLocation, int priceValue, int plotSizeValue,
 			int numberOfRoomsValue, double totalAreaValue, int numberOfFloorsValue, 
 			Condition condition) {
@@ -40,6 +41,7 @@ public class EstateProperty {
 				buildNumberOfRooms(numberOfRoomsValue), buildTotalArea(totalAreaValue), 
 				buildNumberOfFloors(numberOfFloorsValue),condition);
 		
+		this.identificator = identificator;
 		this.priceValue = priceValue;
 		this.plotSizeValue = plotSizeValue;
 		this.numberOfRoomsValue = numberOfRoomsValue;
@@ -133,12 +135,7 @@ public class EstateProperty {
 		}
 	}
 
-	@Override
-	public String toString() {
-		return "EstateProperty [realEstateType=" + realEstateType
-				+ ", plotSize=" + plotSize + ", realEstateLocation="
-				+ realEstateLocation + ", isSuitable=" + isSuitable + "]";
-	}
+	
 
 	public List<UserOutput> getAllProperties() {
 		return allProperties;
@@ -266,6 +263,30 @@ public class EstateProperty {
 
 	public void setNumberOfFloorsValue(int numberOfFloorsValue) {
 		this.numberOfFloorsValue = numberOfFloorsValue;
+	}
+
+	public String getIdentificator() {
+		return identificator;
+	}
+
+	public void setIdentificator(String identificator) {
+		this.identificator = identificator;
+	}
+
+	@Override
+	public String toString() {
+		return "EstateProperty [identificator=" + identificator
+				+ ", realEstateType=" + realEstateType + ", transactionType="
+				+ transactionType + ", realEstateLocation="
+				+ realEstateLocation + ", price=" + price + ", priceValue="
+				+ priceValue + ", plotSize=" + plotSize + ", plotSizeValue="
+				+ plotSizeValue + ", numberOfRooms=" + numberOfRooms
+				+ ", numberOfRoomsValue=" + numberOfRoomsValue + ", totalArea="
+				+ totalArea + ", totalAreaValue=" + totalAreaValue
+				+ ", numberOfFloors=" + numberOfFloors
+				+ ", numberOfFloorsValue=" + numberOfFloorsValue
+				+ ", condition=" + condition + ", isSuitable=" + isSuitable
+				+ "]";
 	}
 
 }
