@@ -4,13 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.mach1.reafs.output.types.Condition;
-import com.mach1.reafs.output.types.NumberOfFloors;
-import com.mach1.reafs.output.types.NumberOfRooms;
-import com.mach1.reafs.output.types.PlotSize;
-import com.mach1.reafs.output.types.Price;
 import com.mach1.reafs.output.types.RealEstateLocation;
 import com.mach1.reafs.output.types.RealEstateType;
-import com.mach1.reafs.output.types.TotalArea;
 import com.mach1.reafs.output.types.TransactionType;
 
 public class EstatePropertyFactory {
