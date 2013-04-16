@@ -4,15 +4,20 @@ import java.util.List;
 import java.util.ArrayList;
 
 import com.mach1.reafs.output.UserOutput;
-import com.mach1.reafs.output.types.PlotSize;
-import com.mach1.reafs.output.types.RealEstateLocation;
-import com.mach1.reafs.output.types.RealEstateType;
+import com.mach1.reafs.output.types.*;
 
 public class EstateProperty {
 
 	private RealEstateType realEstateType;
-	private PlotSize plotSize;
+	private TransactionType transactionType;
 	private RealEstateLocation realEstateLocation;
+	private Price price;
+	private PlotSize plotSize;
+	private NumberOfRooms numberOfRooms;
+	private TotalArea totalArea;
+	private NumberOfFloors numberOfFloors;
+	private Condition condition;
+	
 	private boolean isSuitable = true;
 
 	private List<UserOutput> allProperties = new ArrayList<UserOutput>();
@@ -20,47 +25,30 @@ public class EstateProperty {
 	public EstateProperty() {
 	}
 
-	public EstateProperty(RealEstateType realEstateType, PlotSize plotSize,
-			RealEstateLocation realEstateLocation) {
+	public EstateProperty(RealEstateType realEstateType, TransactionType transactionType,
+			RealEstateLocation realEstateLocation, Price price, PlotSize plotSize,
+			NumberOfRooms numberOfRooms, TotalArea totalArea, NumberOfFloors numberOfFloors, 
+			Condition condition) {
 		this.realEstateType = realEstateType;
-		this.plotSize = plotSize;
+		this.transactionType = transactionType;
 		this.realEstateLocation = realEstateLocation;
+		this.price = price;
+		this.plotSize = plotSize;
+		this.numberOfRooms = numberOfRooms;
+		this.totalArea = totalArea;
+		this.numberOfFloors = numberOfFloors;
+		this.condition = condition;
+		
 		allProperties.add(realEstateType);
-		allProperties.add(plotSize);
+		allProperties.add(transactionType);
 		allProperties.add(realEstateLocation);
-	}
-
-	public RealEstateType getRealEstateType() {
-		return realEstateType;
-	}
-
-	public void setRealEstateType(RealEstateType realEstateType) {
-		this.realEstateType = realEstateType;
-	}
-
-	public PlotSize getPlotSize() {
-		return plotSize;
-	}
-
-	public void setPlotSize(PlotSize plotSize) {
-		this.plotSize = plotSize;
-	}
-
-	public boolean isSuitable() {
-		return isSuitable;
-	}
-
-	public void setSuitable(boolean isSuitable) {
-		this.isSuitable = isSuitable;
-	}
-
-	public RealEstateLocation getRealEstateLocation() {
-		return realEstateLocation;
-	}
-
-	public void setRealEstateLocation(RealEstateLocation realEstateLocation) {
-		this.realEstateLocation = realEstateLocation;
-	}
+		allProperties.add(price);
+		allProperties.add(plotSize);
+		allProperties.add(numberOfRooms);
+		allProperties.add(totalArea);
+		allProperties.add(numberOfFloors);
+		allProperties.add(condition);
+	}	
 
 	@Override
 	public String toString() {
@@ -75,6 +63,86 @@ public class EstateProperty {
 
 	public void setAllProperties(List<UserOutput> allProperties) {
 		this.allProperties = allProperties;
+	}
+
+	public RealEstateType getRealEstateType() {
+		return realEstateType;
+	}
+
+	public void setRealEstateType(RealEstateType realEstateType) {
+		this.realEstateType = realEstateType;
+	}
+
+	public TransactionType getTransactionType() {
+		return transactionType;
+	}
+
+	public void setTransactionType(TransactionType transactionType) {
+		this.transactionType = transactionType;
+	}
+
+	public RealEstateLocation getRealEstateLocation() {
+		return realEstateLocation;
+	}
+
+	public void setRealEstateLocation(RealEstateLocation realEstateLocation) {
+		this.realEstateLocation = realEstateLocation;
+	}
+
+	public Price getPrice() {
+		return price;
+	}
+
+	public void setPrice(Price price) {
+		this.price = price;
+	}
+
+	public PlotSize getPlotSize() {
+		return plotSize;
+	}
+
+	public void setPlotSize(PlotSize plotSize) {
+		this.plotSize = plotSize;
+	}
+
+	public NumberOfRooms getNumberOfRooms() {
+		return numberOfRooms;
+	}
+
+	public void setNumberOfRooms(NumberOfRooms numberOfRooms) {
+		this.numberOfRooms = numberOfRooms;
+	}
+
+	public TotalArea getTotalArea() {
+		return totalArea;
+	}
+
+	public void setTotalArea(TotalArea totalArea) {
+		this.totalArea = totalArea;
+	}
+
+	public NumberOfFloors getNumberOfFloors() {
+		return numberOfFloors;
+	}
+
+	public void setNumberOfFloors(NumberOfFloors numberOfFloors) {
+		this.numberOfFloors = numberOfFloors;
+	}
+
+	public Condition getCondition() {
+		return condition;
+	}
+
+	public void setCondition(Condition condition) {
+		this.condition = condition;
+	}
+
+	public boolean isSuitable() {
+		return isSuitable;
+	}
+
+	public void setSuitable(boolean isSuitable) {
+		this.isSuitable = isSuitable;
 	}
 
 }
