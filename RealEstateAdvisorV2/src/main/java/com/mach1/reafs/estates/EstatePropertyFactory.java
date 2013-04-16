@@ -30,81 +30,56 @@ public class EstatePropertyFactory {
 		//V-01
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.RENT, RealEstateLocation.KESKLINN,
-				Price.FROM_500_TO_1200, PlotSize.LESS_THAN_500,
-				NumberOfRooms.TWO, TotalArea.LESS_THAN_50, 
-				NumberOfFloors.ONE, Condition.NEW));
+				600, 0,	2, 0, 1, Condition.NEW));
 		//V-02
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.RENT, RealEstateLocation.PIRITA,
-				Price.FROM_200_TO_500, PlotSize.LESS_THAN_500,
-				NumberOfRooms.TWO, TotalArea.FROM_50_TO_100, 
-				NumberOfFloors.ONE, Condition.NEW));
+				390, 0, 2, 51.70, 1, Condition.NEW));
 		//V-03
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.RENT, RealEstateLocation.MUSTAMAE,
-				Price.FROM_200_TO_500, PlotSize.LESS_THAN_500,
-				NumberOfRooms.TWO, TotalArea.FROM_50_TO_100, 
-				NumberOfFloors.ONE, Condition.NEW));
+				390, 0,	2, 59.90, 
+				1, Condition.NEW));
 		//V-04
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.RENT, RealEstateLocation.KRISTIINE,
-				Price.FROM_200_TO_500, PlotSize.LESS_THAN_500,
-				NumberOfRooms.TWO, TotalArea.LESS_THAN_50, 
-				NumberOfFloors.ONE, Condition.NEW));
+				400, 0, 2, 39, 1, Condition.NEW));
 		//V-05
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.RENT, RealEstateLocation.KESKLINN,
-				Price.FROM_200_TO_500, PlotSize.LESS_THAN_500,
-				NumberOfRooms.TWO, TotalArea.FROM_50_TO_100, 
-				NumberOfFloors.ONE, Condition.RENOVATED));
+				400, 0, 2, 52, 1, Condition.RENOVATED));
 		//V-06
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.RENT, RealEstateLocation.PIRITA,
-				Price.LESS_THAN_200, PlotSize.LESS_THAN_500,
-				NumberOfRooms.ONE, TotalArea.LESS_THAN_50, 
-				NumberOfFloors.ONE, Condition.RENOVATED));
+				100, 0, 1, 16, 1, Condition.RENOVATED));
 		//V-07
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.RENT, RealEstateLocation.MUSTAMAE,
-				Price.FROM_200_TO_500, PlotSize.LESS_THAN_500,
-				NumberOfRooms.FOUR, TotalArea.FROM_50_TO_100, 
-				NumberOfFloors.ONE, Condition.RENOVATED));
+				500, 0, 4, 75.60, 1, Condition.RENOVATED));
 		//V-08
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.RENT, RealEstateLocation.KRISTIINE,
-				Price.FROM_200_TO_500, PlotSize.LESS_THAN_500,
-				NumberOfRooms.TWO, TotalArea.LESS_THAN_50, 
-				NumberOfFloors.ONE, Condition.RENOVATED));
+				390, 0, 2, 46.40, 1, Condition.RENOVATED));
 		//V-09
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.RENT, RealEstateLocation.KESKLINN,
-				Price.LESS_THAN_200, PlotSize.LESS_THAN_500,
-				NumberOfRooms.ONE, TotalArea.LESS_THAN_50, 
-				NumberOfFloors.ONE, Condition.IN_NEED_OF_REPAIR));
+				140, 0, 1, 28.0, 1, Condition.IN_NEED_OF_REPAIR));
 		//V-10
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.RENT, RealEstateLocation.PIRITA,
-				Price.FROM_200_TO_500, PlotSize.LESS_THAN_500,
-				NumberOfRooms.TWO, TotalArea.FROM_50_TO_100, 
-				NumberOfFloors.ONE, Condition.IN_NEED_OF_REPAIR));
+				300, 0, 2, 51.0, 1, Condition.IN_NEED_OF_REPAIR));
 		//V-11
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.RENT, RealEstateLocation.MUSTAMAE,
-				Price.FROM_200_TO_500, PlotSize.LESS_THAN_500,
-				NumberOfRooms.TWO, TotalArea.LESS_THAN_50, 
-				NumberOfFloors.ONE, Condition.IN_NEED_OF_REPAIR));
+				260, 0, 2, 43.0, 1, Condition.IN_NEED_OF_REPAIR));
 		//V-12
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.RENT, RealEstateLocation.KRISTIINE,
-				Price.LESS_THAN_200, PlotSize.LESS_THAN_500,
-				NumberOfRooms.TWO, TotalArea.LESS_THAN_50, 
-				NumberOfFloors.ONE, Condition.IN_NEED_OF_REPAIR));
+				140, 0, 2, 16, 1, Condition.IN_NEED_OF_REPAIR));
 		//V-13
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.RENT, RealEstateLocation.LASNAMAE,
-				Price.LESS_THAN_200, PlotSize.LESS_THAN_500,
-				NumberOfRooms.ONE, TotalArea.LESS_THAN_50, 
-				NumberOfFloors.ONE, Condition.RENOVATED));
+				200, 0,1, 33, 1, Condition.RENOVATED));
 		//V-14
 		estateProperties.add(new EstateProperty(RealEstateType.FLAT,
 				TransactionType.RENT, RealEstateLocation.LASNAMAE,
