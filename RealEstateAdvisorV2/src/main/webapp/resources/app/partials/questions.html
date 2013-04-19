@@ -1,4 +1,7 @@
 <div class="well">
+    <div class="progress progress-striped">
+      <div class="bar" style="width: {{getPercentageCompleted()}}%;"></div>
+    </div>
     <h2>{{getQuestionId()}}. {{currentQuestion.questionText}}</h2>
     <label data-ng-repeat="answer in currentQuestion.answerList" class="radio">
         <input type="radio" name="answers" id="{{'answer' + $index}}" value="{{$index}}" data-ng-model="currentQuestion.selected">

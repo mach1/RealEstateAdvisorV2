@@ -19,7 +19,6 @@ define([
       $scope.currentQuestion = questions[$scope.getStepId()];
     });
 
-    console.log($location.search());
     if (typeof $location.search().id === 'undefined') {
       $location.search({id: 0});
     }
@@ -52,6 +51,10 @@ define([
     $scope.isLastQuestion = function() {
       return ($scope.getStepId() + 1) === $scope.questions.length;
     };
+
+    $scope.getPercentageCompleted = function() {
+      return ($scope.getQuestionId() / $scope.questions.length) * 100;
+    };
     $scope.submit = function() {
       var getAnswers = function() {
         var answerKeyList = [], answerId, question, answer;
@@ -64,22 +67,13 @@ define([
         return answerKeyList;
       }, answers;
       questionService.setAnswers(getAnswers());
-      $location.path('/result');
+      $location.path('/result').search('');
     };
 
     $scope.currentQuestion = questionService.getQuestions()[$scope.getStepId()];
   }]);
 
-  questionnaire.directive('questionnaire', function() {
-    return {
-        replace: true,
-        restrict: 'E',
-        controller: 'questionnaireController',
-        templateUrl: 'app/views/questionnaire/questionnaire-partial.html'
-    };
-  });
-
-  questionnaire.factory('questionService', ['$q', '$http', function($q, $http) {
+  questionnaire.factory('questionService', ['$q', '$http', '$log', function($q, $http, $log) {
     var questions, realEstates, foo, answers;
     var fetchQuestions = function() {
       var deferred = $q.defer();
@@ -89,17 +83,23 @@ define([
       $http.get('../rest/questions').then(function(response) {
         questions = response.data;
         deferred.resolve(response.data);
+      }, function(reason) {
+        $log.log("failed to get questions.");
       });
       return deferred.promise;
     };
     var fetchRealEstates = function(answers) {
       var deferred = $q.defer();
-      if (realEstates) {
-        deferred.resolve(realEstates.data);
-      }
+      $log.log(answers);
       $http.post('../rest/input', answers).then(function(response) {
+        $log.log("result query success");
+        $log.log("with answers:");
+        $log.log(response.data);
         realEstates = response.data;
         deferred.resolve(realEstates);
+      }, function(reason) {
+        $log.log("failed to get results.");
+        deferred.reject("Result query failed");
       });
       return deferred.promise;
     };

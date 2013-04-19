@@ -32,9 +32,6 @@ public class HomeController {
 			.getLogger(HomeController.class);
 
 	@Autowired
-	private StatefulKnowledgeSession realEstatesKSession;
-
-	@Autowired
 	private RealEstateProcessingService realEstateProcessingService;
 
 	@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, value = "/input", method = RequestMethod.POST)

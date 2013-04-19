@@ -12,6 +12,4 @@
                              source="classpath:rules/RealEstateRules.drl"/>
         </drools:resources>
     </drools:kbase>
-
-    <drools:ksession id="realEstatesKSession" name="realEstatesKSession" type="stateful" kbase="realEstateKBase"/>
 </beans>

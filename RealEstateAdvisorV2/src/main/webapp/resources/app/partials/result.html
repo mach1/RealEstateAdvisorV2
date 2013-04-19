@@ -1,7 +1,32 @@
-{{realEstates}}
-<div data-ng-repeat="realEstate in realEstates">
-	<dl class="dl-horizontal">
-	  <dt>Seisukord</dt>
-	  <dd>...</dd>
-	</dl>
-</div>
+<div class="container">
+	<div class="alert alert-error" ng-show="error">
+	  <button type="button" class="close" data-dismiss="alert">&times;</button>
+	  <strong>Viga!</strong> {{error}}
+	</div>
+	<a class="btn btn-link" href="#questions">Tagasi algusesse</a>
+	<div data-ng-repeat="realEstate in realEstates">
+		<div class="row-fluid">
+			<div class="span12">
+				<h3>#{{$index}}</h3>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span4">
+				<img ng-src="img/{{realEstate.identificator}}.jpg">
+			</div>
+			<div class="span8">
+				<dl class="dl-horizontal">
+					<dt>Kinnisvaraliik</dt><dd>{{realEstate.realEstateTypeString}}</dd>
+					<dt>Tehingu liik</dt><dd>{{realEstate.transactionTypeString}}</dd>
+					<dt>Kinnisvara asukoht</dt><dd>{{realEstate.realEstateLocationString}}</dd>
+					<dt>Hind</dt><dd>{{realEstate.priceValue}} €</dd>
+					<dt>Krundi suurus</dt><dd>{{realEstate.plotSizeValue}}</dd>
+					<dt>Tubade arv</dt><dd>{{realEstate.numberOfRoomsValue}}</dd>
+					<dt>Üldpind</dt><dd>{{realEstate.totalAreaValue}} m²</dd>
+					<dt>Korruste arv</dt><dd>{{realEstate.numberOfFloorsValue}}</dd>
+					<dt>Seisukord</dt><dd>{{realEstate.conditionText}}</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+<div>

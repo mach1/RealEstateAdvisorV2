@@ -3,6 +3,7 @@ package com.mach1.reafs.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.drools.KnowledgeBase;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,7 +18,8 @@ import com.mach1.reafs.output.UserOutput;
 public class RealEstateProcessingService {
 
 	@Autowired
-	private StatefulKnowledgeSession realEstatesKSession;
+	private KnowledgeBase realEstateKBase;
+	
 
 	public List<EstateProperty> getEstates(List<UserInput> userInputs) {
 
@@ -38,12 +40,14 @@ public class RealEstateProcessingService {
 	}
 
 	private List<UserOutput> getDroolsOutput(List<UserInput> userInputs) {
+		StatefulKnowledgeSession realEstatesKSession = realEstateKBase.newStatefulKnowledgeSession();
 		for (UserInput userInput : userInputs) {
 			realEstatesKSession.insert(userInput);
 		}
 		List<UserOutput> userOutputs = new ArrayList<UserOutput>();
 		realEstatesKSession.insert(userOutputs);
 		realEstatesKSession.fireAllRules();
+		realEstatesKSession.dispose();
 		return userOutputs;
 	}
 

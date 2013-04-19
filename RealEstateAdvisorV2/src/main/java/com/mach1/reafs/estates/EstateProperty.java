@@ -10,8 +10,11 @@ public class EstateProperty {
 
 	private String identificator;
 	private RealEstateType realEstateType;
+	private String realEstateTypeString;
 	private TransactionType transactionType;
+	private String transactionTypeString;
 	private RealEstateLocation realEstateLocation;
+	private String realEstateLocationString;
 	private Price price;
 	private int priceValue;
 	private PlotSize plotSize;
@@ -23,47 +26,56 @@ public class EstateProperty {
 	private NumberOfFloors numberOfFloors;
 	private int numberOfFloorsValue;
 	private Condition condition;
-	
+	private String conditionText;
+
 	private boolean isSuitable = true;
 
 	private List<UserOutput> allProperties = new ArrayList<UserOutput>();
 
 	public EstateProperty() {
 	}
-	
-	public EstateProperty(String identificator, RealEstateType realEstateType, TransactionType transactionType,
-			RealEstateLocation realEstateLocation, int priceValue, int plotSizeValue,
-			int numberOfRoomsValue, double totalAreaValue, int numberOfFloorsValue, 
-			Condition condition) {
-		
-		this(realEstateType, transactionType, realEstateLocation, 
+
+	public EstateProperty(String identificator, RealEstateType realEstateType,
+			TransactionType transactionType,
+			RealEstateLocation realEstateLocation, int priceValue,
+			int plotSizeValue, int numberOfRoomsValue, double totalAreaValue,
+			int numberOfFloorsValue, Condition condition) {
+
+		this(realEstateType, transactionType, realEstateLocation,
 				buildPrice(priceValue), buildPlotSize(plotSizeValue),
-				buildNumberOfRooms(numberOfRoomsValue), buildTotalArea(totalAreaValue), 
-				buildNumberOfFloors(numberOfFloorsValue),condition);
-		
+				buildNumberOfRooms(numberOfRoomsValue),
+				buildTotalArea(totalAreaValue),
+				buildNumberOfFloors(numberOfFloorsValue), condition);
+
 		this.identificator = identificator;
 		this.priceValue = priceValue;
 		this.plotSizeValue = plotSizeValue;
 		this.numberOfRoomsValue = numberOfRoomsValue;
 		this.totalAreaValue = totalAreaValue;
 		this.numberOfFloorsValue = numberOfFloorsValue;
-		
+
 	}
 
-	public EstateProperty(RealEstateType realEstateType, TransactionType transactionType,
-			RealEstateLocation realEstateLocation, Price price, PlotSize plotSize,
-			NumberOfRooms numberOfRooms, TotalArea totalArea, NumberOfFloors numberOfFloors, 
+	public EstateProperty(RealEstateType realEstateType,
+			TransactionType transactionType,
+			RealEstateLocation realEstateLocation, Price price,
+			PlotSize plotSize, NumberOfRooms numberOfRooms,
+			TotalArea totalArea, NumberOfFloors numberOfFloors,
 			Condition condition) {
 		this.realEstateType = realEstateType;
+		this.realEstateTypeString = realEstateType.getTranslation();
 		this.transactionType = transactionType;
+		this.transactionTypeString = transactionType.getTranslation();
 		this.realEstateLocation = realEstateLocation;
+		this.realEstateLocationString = realEstateLocation.getTranslation();
 		this.price = price;
 		this.plotSize = plotSize;
 		this.numberOfRooms = numberOfRooms;
 		this.totalArea = totalArea;
 		this.numberOfFloors = numberOfFloors;
 		this.condition = condition;
-		
+		this.conditionText = condition.getTranslation();
+
 		allProperties.add(realEstateType);
 		allProperties.add(transactionType);
 		allProperties.add(realEstateLocation);
@@ -73,8 +85,8 @@ public class EstateProperty {
 		allProperties.add(totalArea);
 		allProperties.add(numberOfFloors);
 		allProperties.add(condition);
-	}	
-	
+	}
+
 	private static Price buildPrice(int priceValue) {
 		if (priceValue > 250000) {
 			return Price.MORE_THAN_250000;
@@ -86,56 +98,57 @@ public class EstateProperty {
 			return Price.FROM_500_TO_1200;
 		} else if (priceValue > 200) {
 			return Price.FROM_200_TO_500;
-		} else return Price.LESS_THAN_200;
+		} else
+			return Price.LESS_THAN_200;
 	}
-	
+
 	private static PlotSize buildPlotSize(int plotSizeValue) {
 		if (plotSizeValue > 1500) {
 			return PlotSize.MORE_THAN_1500;
 		} else if (plotSizeValue > 500) {
 			return PlotSize.FROM_500_TO_1500;
-		} else return PlotSize.LESS_THAN_500;
+		} else
+			return PlotSize.LESS_THAN_500;
 	}
-	
+
 	private static NumberOfRooms buildNumberOfRooms(int numberOfRoomsValue) {
 		switch (numberOfRoomsValue) {
-		case 1: 
+		case 1:
 			return NumberOfRooms.ONE;
-		case 2: 
+		case 2:
 			return NumberOfRooms.TWO;
-		case 3: 
+		case 3:
 			return NumberOfRooms.THREE;
-		case 4: 
+		case 4:
 			return NumberOfRooms.FOUR;
-		default: 
+		default:
 			return NumberOfRooms.MORE_THAN_FOUR;
 		}
 	}
-	
+
 	private static TotalArea buildTotalArea(double totalAreaValue) {
 		if (totalAreaValue > 250) {
 			return TotalArea.MORE_THAN_250;
-		} else if(totalAreaValue > 100) {
+		} else if (totalAreaValue > 100) {
 			return TotalArea.FROM_100_TO_250;
-		} else if(totalAreaValue > 50) {
+		} else if (totalAreaValue > 50) {
 			return TotalArea.FROM_50_TO_100;
-		} else return TotalArea.LESS_THAN_50;
+		} else
+			return TotalArea.LESS_THAN_50;
 	}
-	
+
 	private static NumberOfFloors buildNumberOfFloors(int numberOfFloorsValue) {
 		switch (numberOfFloorsValue) {
-		case 1: 
+		case 1:
 			return NumberOfFloors.ONE;
-		case 2: 
+		case 2:
 			return NumberOfFloors.TWO;
-		case 3: 
+		case 3:
 			return NumberOfFloors.THREE;
-		default: 
+		default:
 			return NumberOfFloors.MORE_THAN_THREE;
 		}
 	}
-
-	
 
 	public List<UserOutput> getAllProperties() {
 		return allProperties;
@@ -271,6 +284,38 @@ public class EstateProperty {
 
 	public void setIdentificator(String identificator) {
 		this.identificator = identificator;
+	}
+
+	public String getConditionText() {
+		return conditionText;
+	}
+
+	public void setConditionText(String conditionText) {
+		this.conditionText = conditionText;
+	}
+
+	public String getRealEstateTypeString() {
+		return realEstateTypeString;
+	}
+
+	public void setRealEstateTypeString(String realEstateTypeString) {
+		this.realEstateTypeString = realEstateTypeString;
+	}
+
+	public String getTransactionTypeString() {
+		return transactionTypeString;
+	}
+
+	public void setTransactionTypeString(String transactionTypeString) {
+		this.transactionTypeString = transactionTypeString;
+	}
+
+	public String getRealEstateLocationString() {
+		return realEstateLocationString;
+	}
+
+	public void setRealEstateLocationString(String realEstateLocationString) {
+		this.realEstateLocationString = realEstateLocationString;
 	}
 
 	@Override

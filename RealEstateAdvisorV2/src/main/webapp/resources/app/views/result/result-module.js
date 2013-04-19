@@ -12,6 +12,8 @@ define([
     $scope.realEstates = [];
     questionService.getRealEstates().then(function(realEstates) {
       $scope.realEstates = realEstates;
+    }, function(reason) {
+      $scope.error = "Vastuseid ei sisestatud või server ei vastanud";
     });
   }]);
   return result;
