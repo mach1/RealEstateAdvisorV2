@@ -42,16 +42,16 @@ public class UserInputQuestionFactory {
 				DistanceFromTheNeighbors.FEW_HUNDRED_METERS.toString()));
 		userInputAnswers.add(new UserInputAnswer("Kaugemal kui 1km", 
 				DistanceFromTheNeighbors.MORE_THAN_1_KM.toString()));
-		userInputQuestions.add(new UserInputQuestion("L‰himad naabrid peaksid asuma...", 
+		userInputQuestions.add(new UserInputQuestion("L√§himad naabrid peaksid asuma...", 
 				userInputAnswers));
 		
 		//DistanceFromTheSea
 		userInputAnswers = new ArrayList<UserInputAnswer>();
 		userInputAnswers.add(new UserInputAnswer("Peaks paistma aknast", 
 				DistanceFromTheSea.VISIBLE_FROM_WINDOW.toString()));
-		userInputAnswers.add(new UserInputAnswer("Peaks olema jalutusk‰igu kaugusel", 
+		userInputAnswers.add(new UserInputAnswer("Peaks olema jalutusk√§igu kaugusel", 
 				DistanceFromTheSea.A_WALK_AWAY.toString()));
-		userInputAnswers.add(new UserInputAnswer("Mere l‰hedus pole oluline", 
+		userInputAnswers.add(new UserInputAnswer("Mere l√§hedus pole oluline", 
 				DistanceFromTheSea.NOT_IMPORTANT.toString()));
 		userInputQuestions.add(new UserInputQuestion("Meri...", 
 				userInputAnswers));
@@ -62,27 +62,27 @@ public class UserInputQuestionFactory {
 				FamilySize.ONE_MEMBER.toString()));
 		userInputAnswers.add(new UserInputAnswer("2-4 liiget", 
 				FamilySize.TWO_TO_FOUR_MEMBERS.toString()));
-		userInputAnswers.add(new UserInputAnswer("5 vıi rohkem liiget", 
+		userInputAnswers.add(new UserInputAnswer("5 v√µi rohkem liiget", 
 				FamilySize.FIVE_OR_MORE_MEMBERS.toString()));
 		userInputQuestions.add(new UserInputQuestion("Kodu otsiva pere suurus on...", 
 				userInputAnswers));
 		
 		//Income
 		userInputAnswers = new ArrayList<UserInputAnswer>();
-		userInputAnswers.add(new UserInputAnswer("< 500Ä", 
+		userInputAnswers.add(new UserInputAnswer("< 500‚Ç¨", 
 				Income.LESS_THAN_500.toString()));
-		userInputAnswers.add(new UserInputAnswer("500Ä < sissetulek < 1200Ä", 
+		userInputAnswers.add(new UserInputAnswer("500‚Ç¨ < sissetulek < 1200‚Ç¨", 
 				Income.BETWEEN_500_AND_1200.toString()));
-		userInputAnswers.add(new UserInputAnswer("1201Ä < sissetulek < 4000Ä", 
+		userInputAnswers.add(new UserInputAnswer("1201‚Ç¨ < sissetulek < 4000‚Ç¨", 
 				Income.BETWEEN_1200_AND_4000.toString()));
-		userInputAnswers.add(new UserInputAnswer(">4000Ä", 
+		userInputAnswers.add(new UserInputAnswer(">4000‚Ç¨", 
 				Income.MORE_THAN_4000.toString()));
 		userInputQuestions.add(new UserInputQuestion("Perekonna sissetulek kuus on...", 
 				userInputAnswers));
 
 		//Silence
 		userInputAnswers = new ArrayList<UserInputAnswer>();
-		userInputAnswers.add(new UserInputAnswer("On minu jaoks v‰ga oluline", 
+		userInputAnswers.add(new UserInputAnswer("On minu jaoks v√§ga oluline", 
 				Silence.VERY_IMPORTANT.toString()));
 		userInputAnswers.add(new UserInputAnswer("Meeldib aegajalt vaikuses/looduses jalutada", 
 				Silence.LIKE_TO_WALK_IN_SILENCE_TIME_TO_TIME.toString()));
@@ -97,29 +97,29 @@ public class UserInputQuestionFactory {
 				Disabilities.NONE.toString()));
 		userInputAnswers.add(new UserInputAnswer("Esineb kerge puue", 
 				Disabilities.MINOR_DISABILITY.toString()));
-		userInputAnswers.add(new UserInputAnswer("Esineb raske vıi liitpuue", 
+		userInputAnswers.add(new UserInputAnswer("Esineb raske v√µi liitpuue", 
 				Disabilities.SEVERE_DISABILITY.toString()));
 		userInputQuestions.add(new UserInputQuestion("Minu perekonnaliikmetel...", 
 				userInputAnswers));
 		
 		//RepairSkills
 		userInputAnswers = new ArrayList<UserInputAnswer>();
-		userInputAnswers.add(new UserInputAnswer("Kellel on remondi- vıi ehitusalane haridus", 
+		userInputAnswers.add(new UserInputAnswer("Kellel on remondi- v√µi ehitusalane haridus", 
 				RepairSkills.REPAIR_OR_CONSTRUCTION_EDUCATION.toString()));
-		userInputAnswers.add(new UserInputAnswer("Mıningad oskused remondi- vıi ehitusalal", 
+		userInputAnswers.add(new UserInputAnswer("M√µningad oskused remondi- v√µi ehitusalal", 
 				RepairSkills.SOME_PROFICIENCY_IN_REPAIRS.toString()));
-		userInputAnswers.add(new UserInputAnswer("Remondi- vıi ehitusalased oskused minu perekonnaliikmete hulgas puuduvad", 
+		userInputAnswers.add(new UserInputAnswer("Remondi- v√µi ehitusalased oskused minu perekonnaliikmete hulgas puuduvad", 
 				RepairSkills.NO_PROFICIENCY_IN_FAMILY.toString()));
 		userInputQuestions.add(new UserInputQuestion("Minu perekonnaliikmete hulgas on inimesi...", 
 				userInputAnswers));
 		
 		//Hobbies
 		userInputAnswers = new ArrayList<UserInputAnswer>();
-		userInputAnswers.add(new UserInputAnswer("Hobid puuduvad vıi ei vaja eritingimusi(lugemine, kudumine) ", 
+		userInputAnswers.add(new UserInputAnswer("Hobid puuduvad v√µi ei vaja eritingimusi(lugemine, kudumine) ", 
 				Hobbies.NONE_OR_NO_SPECIAL_CONDITIONS_NEEDED.toString()));
 		userInputAnswers.add(new UserInputAnswer("Hobid, mis vajavad suurt ala(jalgpall, golf, aiandus)", 
 				Hobbies.LARGE_AREA_NEEDED.toString()));
-		userInputAnswers.add(new UserInputAnswer("Hobid, mis tekitavad m¸ra (motohuvi, muusika)", 
+		userInputAnswers.add(new UserInputAnswer("Hobid, mis tekitavad m√ºra (motohuvi, muusika)", 
 				Hobbies.NOISY.toString()));
 		userInputQuestions.add(new UserInputQuestion("Hobid...", 
 				userInputAnswers));
@@ -128,31 +128,31 @@ public class UserInputQuestionFactory {
 		userInputAnswers = new ArrayList<UserInputAnswer>();
 		userInputAnswers.add(new UserInputAnswer("Maksimaalselt 15 minutit", 
 				SchoolTravelTime.MAX_OF_15_MIN.toString()));
-		userInputAnswers.add(new UserInputAnswer("15 ñ 45 minutit", 
+		userInputAnswers.add(new UserInputAnswer("15 - 45 minutit", 
 				SchoolTravelTime.FROM_15_TO_45_MIN.toString()));
 		userInputAnswers.add(new UserInputAnswer("Rohkem kui 45 minutit", 
 				SchoolTravelTime.MORE_THAN_45_MIN.toString()));
-		userInputQuestions.add(new UserInputQuestion("Maksimaalne lubatud aeg kooli sıitmiseks...", 
+		userInputQuestions.add(new UserInputQuestion("Maksimaalne lubatud aeg kooli s√µitmiseks...", 
 				userInputAnswers));
 		
 		//CurrentSchool
 		userInputAnswers = new ArrayList<UserInputAnswer>();
-		userInputAnswers.add(new UserInputAnswer("Tallinna Tehnika¸likool", 
+		userInputAnswers.add(new UserInputAnswer("Tallinna Tehnika√ºlikool", 
 				CurrentSchool.TALLINN_UNIVERSITY_OF_TECHNOLOGY.toString()));
-		userInputAnswers.add(new UserInputAnswer("Tallinna ‹likool", 
+		userInputAnswers.add(new UserInputAnswer("Tallinna √ºlikool", 
 				CurrentSchool.TALLINN_UNIVERSITY.toString()));
-		userInputQuestions.add(new UserInputQuestion("Kus koolis ıpid?", 
+		userInputQuestions.add(new UserInputQuestion("Kus koolis √µpid?", 
 				userInputAnswers));
 		
 		//TimeRequiredForHeating
 		userInputAnswers = new ArrayList<UserInputAnswer>();
-		userInputAnswers.add(new UserInputAnswer("V‰hem kui tund aega", 
+		userInputAnswers.add(new UserInputAnswer("V√§hem kui tund aega", 
 				TimeRequiredForHeating.LESS_THAN_1_HOUR.toString()));
 		userInputAnswers.add(new UserInputAnswer("Rohkem kui tund aega", 
 				TimeRequiredForHeating.MORE_THAN_1_HOUR.toString()));
-		userInputAnswers.add(new UserInputAnswer("K¸tmisele aega ei tohi kuluda", 
+		userInputAnswers.add(new UserInputAnswer("K√ºtmisele aega ei tohi kuluda", 
 				TimeRequiredForHeating.NONE.toString()));
-		userInputQuestions.add(new UserInputQuestion("Keskmine p‰evane maksimaalne lubatud aeg hoone k¸tmisele...", 
+		userInputQuestions.add(new UserInputQuestion("Keskmine p√§evane maksimaalne lubatud aeg hoone k√ºtmisele...", 
 				userInputAnswers));
 		
 		//MaritalStatus
@@ -185,7 +185,7 @@ public class UserInputQuestionFactory {
 				ChildrenAged.INFANTS.toString()));
 		userInputAnswers.add(new UserInputAnswer("Laps/lapsed on teismeeas", 
 				ChildrenAged.TEENAGERS.toString()));
-		userInputAnswers.add(new UserInputAnswer("Laps/lapsed on t‰iskasvanud ja elavad eraldi", 
+		userInputAnswers.add(new UserInputAnswer("Laps/lapsed on t√§iskasvanud ja elavad eraldi", 
 				ChildrenAged.GROWN_UP_AND_LIVING_SEPARATELY.toString()));
 		userInputQuestions.add(new UserInputQuestion("Laste vanused on...", 
 				userInputAnswers));
@@ -194,7 +194,7 @@ public class UserInputQuestionFactory {
 		userInputAnswers = new ArrayList<UserInputAnswer>();
 		userInputAnswers.add(new UserInputAnswer("Jah, soovime osta", 
 				ReadyToBuy.YES.toString()));
-		userInputAnswers.add(new UserInputAnswer("Esialgu plaan puudub, kuid vıimalusel soovime osta", 
+		userInputAnswers.add(new UserInputAnswer("Esialgu plaan puudub, kuid v√µimalusel soovime osta", 
 				ReadyToBuy.IF_POSSIBLE.toString()));
 		userInputAnswers.add(new UserInputAnswer("Kindlasti ei soovi osta", 
 				ReadyToBuy.NO.toString()));

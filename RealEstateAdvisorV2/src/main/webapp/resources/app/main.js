@@ -19,7 +19,8 @@ require.config({
 
 require([
   'angular',
-  'views'
+  'views',
+  'app'
 ], function(angular) {
   'use strict';
 

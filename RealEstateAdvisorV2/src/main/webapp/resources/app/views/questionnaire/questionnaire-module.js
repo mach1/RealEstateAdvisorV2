@@ -8,21 +8,29 @@ define([
   var questionnaire = angular.module('questionnaire', ['ui.bootstrap']);
 
   // Add a controller to questionnaire module
-  questionnaire.controller('questionnaireController', ['$scope', '$location', '$http', 'questionService', function($scope, $location, $http, questionService) {
-    if ($location.path() === '') {
-      $location.path('0');
+  questionnaire.controller('questionnaireController', ['$scope', '$location', '$http', 'questionService', '$routeParams', function($scope, $location, $http, questionService, $routeParams) {
+    $scope.questions = [];
+
+    questionService.getQuestions().then(function(questions) {
+      for (var i = 0; i < questions.length; i++) {
+        questions[i].selected = "0";
+      }
+      $scope.questions = questions;
+      $scope.currentQuestion = questions[$scope.getStepId()];
+    });
+
+    console.log($location.search());
+    if (typeof $location.search().id === 'undefined') {
+      $location.search({id: 0});
     }
     $scope.$watch(function() {
-      return $location.path();
+      return $location.search();
     }, function() {
-      $scope.currentQuestion = questionService.getQuestionById($scope.getStepId());
+      $scope.currentQuestion = $scope.questions[$scope.getStepId()];
     });
-    $scope.next = function() {
-
-    };
 
     $scope.getStepId = function() {
-      return parseInt($location.path().split('/')[1], 10);
+      return parseInt($location.search().id || 0);
     };
 
     $scope.getQuestionId = function() {
@@ -42,13 +50,21 @@ define([
     };
 
     $scope.isLastQuestion = function() {
-      return ($scope.getStepId() + 1) === questionService.getQuestionCount();
+      return ($scope.getStepId() + 1) === $scope.questions.length;
     };
-    
     $scope.submit = function() {
-    	$http.post('../rest/input', ["FEW_HUNDRED_METERS"]).then(function(data) {
-    		console.log(data.data);
-    	});
+      var getAnswers = function() {
+        var answerKeyList = [], answerId, question, answer;
+        for (var i = 0; i < $scope.questions.length; i++) {
+          question = $scope.questions[i];
+          answerId = parseInt(question.selected);
+          answer = question.answerList[answerId].answerEnumString;
+          answerKeyList.push(answer);
+        }
+        return answerKeyList;
+      }, answers;
+      questionService.setAnswers(getAnswers());
+      $location.path('/result');
     };
 
     $scope.currentQuestion = questionService.getQuestions()[$scope.getStepId()];
@@ -63,36 +79,48 @@ define([
     };
   });
 
-  questionnaire.factory('questionService', function() {
-    var questions = [
-      {
-        question: 'Lähimad naabrid peaksid asuma...',
-        answers: ['Samas majas', 'Paarisaja meetri raadiuses', 'Kaugemal kui 1km'],
-        selected: 0
-      },
-      {
-        question: 'Meri...',
-        answers: ['Peaks paistma aknast', 'Peaks olema jalutuskäigu kaugusel', 'Mere lähedus pole oluline'],
-        selected: 0
-      },
-      {
-        question: 'Kodu otsiva pere suurus on...',
-        answers: ['1 liige', '2-4 liiget', '5 või rohkem liiget'],
-        selected: 0
+  questionnaire.factory('questionService', ['$q', '$http', function($q, $http) {
+    var questions, realEstates, foo, answers;
+    var fetchQuestions = function() {
+      var deferred = $q.defer();
+      if (questions) {
+        deferred.resolve(questions);
       }
-    ];
+      $http.get('../rest/questions').then(function(response) {
+        questions = response.data;
+        deferred.resolve(response.data);
+      });
+      return deferred.promise;
+    };
+    var fetchRealEstates = function(answers) {
+      var deferred = $q.defer();
+      if (realEstates) {
+        deferred.resolve(realEstates.data);
+      }
+      $http.post('../rest/input', answers).then(function(response) {
+        realEstates = response.data;
+        deferred.resolve(realEstates);
+      });
+      return deferred.promise;
+    };
     return {
       getQuestions: function() {
-        return questions;
+        return fetchQuestions();
       },
-      getQuestionCount: function() {
-        return questions.length;
+      setAnswers: function(userAnswers) {
+        answers = userAnswers;
       },
-      getQuestionById: function(id) {
-        return questions[id];
+      getRealEstates: function() {
+        return fetchRealEstates(answers);
+      },
+      setFoo: function(data) {
+        foo = data;
+      },
+      getFoo: function() {
+        return foo;
       }
     };
-  });
+  }]);
 
   return questionnaire;
 });

@@ -6,10 +6,10 @@
     </label>
     <ul class="pager">
       <li class="previous" data-ng-hide="isFirstQuestion()">
-        <a href="#/questions/{{getPreviousStepId()}}">&larr; Eelmine</a>
+        <a href="#/questions?id={{getPreviousStepId()}}">&larr; Eelmine</a>
       </li>
       <li class="next" data-ng-hide="isLastQuestion()">
-        <a href="#/questions/{{getNextStepId()}}" data-ng-click="next()">Järgmine &rarr;</a>
+        <a href="#/questions?id={{getNextStepId()}}" data-ng-click="next()">Järgmine &rarr;</a>
       </li>
     </ul>
     <button type="submit" class="btn btn-primary" data-ng-show="isLastQuestion()" data-ng-click="submit()">Näita tulemusi</button>
