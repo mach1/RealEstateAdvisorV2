@@ -15,7 +15,7 @@ public class UserInputQuestionTest {
 
 	@Test
 	public void getQuestionTextTest() {
-		assertEquals(userInputQuestions.get(0).getQuestionText(), "Lähimad naabrid peaksid asuma...");
+		assertEquals(userInputQuestions.get(1).getQuestionText(), "Meri...");
 	}
 	
 	@Test

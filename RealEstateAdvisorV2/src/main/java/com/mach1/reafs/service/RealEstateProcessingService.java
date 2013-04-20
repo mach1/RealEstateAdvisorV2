@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import com.mach1.reafs.estates.EstateProperty;
 import com.mach1.reafs.estates.EstatePropertyFactory;
+import com.mach1.reafs.estates.EstatePropertyResult;
 import com.mach1.reafs.input.UserInput;
 import com.mach1.reafs.input.UserOutputs;
 import com.mach1.reafs.output.UserOutput;
@@ -19,6 +20,8 @@ public class RealEstateProcessingService {
 
 	@Autowired
 	private KnowledgeBase realEstateKBase;
+	
+	private List<EstatePropertyResult> resultList = new ArrayList<EstatePropertyResult>();
 	
 
 	public List<EstateProperty> getEstates(List<UserInput> userInputs) {
@@ -55,21 +58,26 @@ public class RealEstateProcessingService {
 			List<EstateProperty> allEstateProperties, UserOutputs userOutputs) {
 		List<EstateProperty> filteredEstates = new ArrayList<EstateProperty>();
 		for (EstateProperty estateProperty : allEstateProperties) {
-			if (isEstateSuitable(estateProperty, userOutputs)) {
-				filteredEstates.add(estateProperty);
-			}
+			resultList.add(scoreEstate(estateProperty, userOutputs));
+		}
+		java.util.Collections.sort(resultList);
+		for (EstatePropertyResult result : resultList.subList(0, 3)) {
+			filteredEstates.add(result.getEstateProperty());
 		}
 		return filteredEstates;
 	}
 
-	private boolean isEstateSuitable(EstateProperty estateProperty,
+	private EstatePropertyResult scoreEstate (EstateProperty estateProperty,
 			UserOutputs userOutputs) {
-		for (UserOutput userOutput : estateProperty.getAllProperties()) {
-			if (!userOutputs.containsEnumValue(userOutput)
-					&& userOutputs.containsOutputClass(userOutput.getClass())) {
-				return false;
+		EstatePropertyResult result = new EstatePropertyResult(0, estateProperty);
+		for (UserOutput userOutput : userOutputs.getOutputs()) {
+			if (estateProperty.getAllProperties().contains(userOutput)) {
+				result.addScore();
+			} else if (estateProperty.getAllProperties().contains(userOutput.getClass())) {
+				result.addScore(-1);
 			}
 		}
-		return true;
+		return result;
 	}
+	
 }
