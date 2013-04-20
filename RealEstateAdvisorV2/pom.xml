@@ -116,13 +116,7 @@
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 			<scope>test</scope>
-		</dependency>  
-		
-		<dependency>
-            <groupId>org.drools</groupId>
-            <artifactId>drools-spring</artifactId>
-            <version>5.5.0.Final</version>
-        </dependency> 
+		</dependency> 
         
         <!-- Jackson JSON Mapper -->
 		<dependency>
