@@ -3,6 +3,8 @@ package com.mach1.reafs;
 import java.util.List;
 import java.util.Locale;
 
+import jess.JessException;
+
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,7 +40,7 @@ public class HomeController {
 	public @ResponseBody
 	List<EstateProperty> postUserInput(
 			@RequestBody List<String> userInputStrings, Locale locale,
-			Model model) {
+			Model model) throws JessException {
 
 		UserInputEnumProcessor userInputEnumProcessor = UserInputEnumProcessor
 				.getInstance();
