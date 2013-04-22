@@ -13,11 +13,23 @@ import com.mach1.reafs.output.UserOutputWrapper;
 import jess.Filter;
 import jess.JessException;
 import jess.Rete;
+import jess.WorkingMemoryMarker;
 
 @Component("JessEngine")
 public class JessEngine {
 	private static final String RULES_FILE = "rules.clp";
 	private Rete engine;
+	private WorkingMemoryMarker marker;
+	
+	public JessEngine() throws JessException {
+		engine = new Rete();
+		engine.reset();
+		
+		//Load the rules
+		engine.batch(RULES_FILE);
+		marker = engine.mark();
+		
+	}
 	
 	public List<UserOutputWrapper> getUserOutputs(List<UserInput> userInputs) throws JessException {
 		System.out.println("Processing with user inputs:");
@@ -44,11 +56,9 @@ public class JessEngine {
 	
 	@SuppressWarnings("unchecked")
 	private Iterator<UserOutputWrapper> run(List<UserInputWrapper> inputs) throws JessException {
-		engine = new Rete();
-		engine.reset();
 		
-		//Load the rules
-		engine.batch(RULES_FILE);
+		//to make sure no facts are in memory
+		engine.resetToMark(marker);
 		
 		//Load input data into engine
 		engine.addAll(inputs);

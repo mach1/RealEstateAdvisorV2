@@ -50,7 +50,7 @@ public class UserOutputWrapper{
 		if (userOutput == null) {
 			if (other.userOutput != null)
 				return false;
-		} else if (!userOutput.equals(other.userOutput))
+		} else if (!userOutput.toString().equals(other.userOutput.toString()))
 			return false;
 		return true;
 	}
