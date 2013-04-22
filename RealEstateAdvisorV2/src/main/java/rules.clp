@@ -143,7 +143,7 @@
     (UserInputWrapper {userInput == (Income.LESS_THAN_500)} )
     => (add (new UserOutputWrapper (Price.LESS_THAN_200) 3)))
 
-(defrule RE-29 ;DOC CHANGE NEEDED!
+(defrule RE-29
     (UserInputWrapper {userInput == (Income.LESS_THAN_500)} )
     => (add (new UserOutputWrapper (Price.FROM_200_TO_500) 2)))
 
@@ -179,7 +179,7 @@
     (UserInputWrapper {userInput == (Income.BETWEEN_1200_AND_4000)} )
     => (add (new UserOutputWrapper (Price.FROM_50000_TO_250000) 3)))
 
-(defrule RE-38 ;DOC CHANGE NEEDED
+(defrule RE-38
     (UserInputWrapper {userInput == (Income.MORE_THAN_4000)} )
     => (add (new UserOutputWrapper (Price.FROM_500_TO_1200) 2)))
 
@@ -215,7 +215,7 @@
     (UserInputWrapper {userInput == (Income.BETWEEN_1200_AND_4000)} )
     => (add (new UserOutputWrapper (Condition.NEW) 3)))
 
-(defrule RE-47 ;DOC CHANGE NEEDED
+(defrule RE-47
     (UserInputWrapper {userInput == (Income.MORE_THAN_4000)} )
     => (add (new UserOutputWrapper (Condition.RENOVATED) 2)))
 
@@ -252,7 +252,7 @@
     (UserInputWrapper {userInput == (Silence.VERY_IMPORTANT)} )
     => (add (new UserOutputWrapper (PlotSize.MORE_THAN_1500) 3)))
 
-(defrule RE-56 ;DOC CHANGE NEEDED
+(defrule RE-56
     (UserInputWrapper {userInput == (Silence.VERY_IMPORTANT)} )
     => (add (new UserOutputWrapper (PlotSize.FROM_500_TO_1500) 2)))
 
@@ -264,7 +264,7 @@
     (UserInputWrapper {userInput == (Silence.NOT_NECESSARY)} )
     => (add (new UserOutputWrapper (PlotSize.LESS_THAN_500) 3)))
 
-(defrule RE-59 ;DOC CHANGE NEEDED
+(defrule RE-59
     (UserInputWrapper {userInput == (Silence.NOT_NECESSARY)} )
     => (add (new UserOutputWrapper (PlotSize.FROM_500_TO_1500) 2)))
 
@@ -331,11 +331,11 @@
     (UserInputWrapper {userInput == (RepairSkills.REPAIR_OR_CONSTRUCTION_EDUCATION)} )
     => (add (new UserOutputWrapper (Condition.IN_NEED_OF_REPAIR) 3)))
 
-(defrule RE-75 ;DOC CHANGE NEEDED
+(defrule RE-75
     (UserInputWrapper {userInput == (RepairSkills.SOME_PROFICIENCY_IN_REPAIRS)} )
     => (add (new UserOutputWrapper (Condition.IN_NEED_OF_REPAIR) 1)))
 
-(defrule RE-76 ;DOC CHANGE NEEDED
+(defrule RE-76
     (UserInputWrapper {userInput == (RepairSkills.SOME_PROFICIENCY_IN_REPAIRS)} )
     => (add (new UserOutputWrapper (Condition.RENOVATED) 2)))
 
@@ -347,7 +347,7 @@
     (UserInputWrapper {userInput == (RepairSkills.NO_PROFICIENCY_IN_FAMILY)} )
     => (add (new UserOutputWrapper (Condition.NEW) 3)))
 
-(defrule RE-79 ;DOC CHANGE NEEDED
+(defrule RE-79
     (UserInputWrapper {userInput == (RepairSkills.REPAIR_OR_CONSTRUCTION_EDUCATION)} )
     => (add (new UserOutputWrapper (Price.LESS_THAN_200) 3)))
 
@@ -617,10 +617,6 @@
     => (add (new UserOutputWrapper (NumberOfRooms.MORE_THAN_FOUR) 2)))
 
 ;Car availability rules
-/*
-MORE_THAN_ONE_CAR_IN_FAMILY
-ONE_CAR_IN_FAMILY
-*/
 (defrule RE-145
     (UserInputWrapper {userInput == (CarAvailability.ONE_CAR_IN_FAMILY)} )
     => (add (new UserOutputWrapper (RealEstateLocation.KRISTIINE) 3)))
@@ -682,7 +678,6 @@ ONE_CAR_IN_FAMILY
     => (add (new UserOutputWrapper (RealEstateType.FLAT) 3)))
 
 ;Children age rules
-;GROWN_UP_AND_LIVING_SEPARATELY
 (defrule RE-160
     (UserInputWrapper {userInput == (ChildrenAged.NONE)} )
     => (add (new UserOutputWrapper (NumberOfRooms.ONE) 1)))
