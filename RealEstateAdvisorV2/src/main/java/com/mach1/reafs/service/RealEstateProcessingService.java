@@ -21,7 +21,7 @@ public class RealEstateProcessingService {
 	@Autowired
 	private KnowledgeBase realEstateKBase;
 	
-	private List<EstatePropertyResult> resultList = new ArrayList<EstatePropertyResult>();
+	private List<EstatePropertyResult> resultList;
 	
 
 	public List<EstateProperty> getEstates(List<UserInput> userInputs) {
@@ -56,6 +56,7 @@ public class RealEstateProcessingService {
 
 	private List<EstateProperty> getFilteredEstates(
 			List<EstateProperty> allEstateProperties, UserOutputs userOutputs) {
+		resultList = new ArrayList<EstatePropertyResult>();
 		List<EstateProperty> filteredEstates = new ArrayList<EstateProperty>();
 		for (EstateProperty estateProperty : allEstateProperties) {
 			resultList.add(scoreEstate(estateProperty, userOutputs));
